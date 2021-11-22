@@ -1,0 +1,675 @@
+:root{
+    /* PRIMARY COLORS */
+    --orange : #ca3d26;
+    --white : #ffffff;
+
+    /* NEUTRAL COLORS  */
+    --bluish-grey : #4a4d4f;
+    --darkBlue : #1e1e1f;
+    --grey : #555555;
+
+    /* FONTS  */
+    --lato:'Lato', sans-serif;
+    --ptSans:'PT Sans Narrow', sans-serif;
+    --monteCarlo:  'MonteCarlo', cursive;
+    --font-weight-heavy:700;
+    --font-weight-max :900;
+    --font-weight-regular:400;
+    --font-weight-light:300;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html ,
+body{
+    background-color: var(--white);
+    height: 100%;
+    width: 100%;
+    position: relative;
+    font-family: var(--ptSans);
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+    width: 10%;
+}
+
+hr{
+    margin: 0;
+    border-color: var(--grey);
+}
+
+a{
+    text-decoration: none;
+}
+
+i{
+    color: white;
+}
+
+a:hover{
+    color: var(--white);
+    text-decoration: none;
+}
+
+.heading{
+    font-size: 10ch;
+    font-family: var(--monteCarlo);
+    font-weight: var(--font-weight-max);
+    color: var(--orange);
+}
+.info{
+    width: 100vw;
+    background: var(--white);
+    flex-direction: column;
+}
+
+
+.top-nav-bars ,
+.contact-nav ,
+.menu-nav,
+.info,
+.menu-btn-list,
+.menu-card-holder,
+.menu-card-items,
+.chefs-container,
+.blog-carousel,
+.footer{
+    display: flex;
+}
+
+.main-body{
+    width:100%;
+    height: 200vh;
+    position: relative;
+}
+
+/* NAVBARS HERE  */
+
+.top-nav-bars{
+    flex-direction: column;
+    width: 100vw;
+    position:fixed;
+    top:0;
+    z-index: 10;
+}
+
+.contact-nav ,
+.menu-nav{
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 0 5%;
+    transition: ease-in-out;
+}
+
+.contact-nav >div{
+    width: 100%;
+}
+
+.contact-info >h2{
+    display: inline-block;
+    margin :0 2%;
+    font-size: 3ch;
+    font-family: var(--ptSans);
+    font-weight: var(--font-weight-heavy);
+}
+
+.contact-info{
+    display: flex;
+    align-content: center;
+    color:var(--white);
+}
+
+
+.contact-btn{
+    background-color: var(--orange);
+    border: none;
+    border-radius:0;
+    color:var(--white);
+    margin-left: 20em;
+    width :25%;
+    height: 3.5em;
+}
+.logo{
+    width: 40%;
+}
+.menu--list{
+    width: 60%;
+}
+.menu-nav>li{
+    margin: 2%;
+}
+
+/* NOTE FOR SELF :  Make sure to align the contact navbar and menu navbar , 
+give the whole div a causorel and change it using bootstrap  , after that , 
+make sure to get the spile borders  */
+
+/* CAUROSEL HERE !!! */
+#headcarousel{
+    width:100vw;
+    height:100vh;
+}
+
+.carousel-indicators>li{
+    padding: .3% .1%;
+    width: 10px;
+    border-radius: 50%;
+    margin: .5%;
+}
+
+.promo{
+    position: relative;
+    height: 100vh;
+}
+
+.promo-1{
+    background: linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)
+    ), url('../images/promo_slide_1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: 5px;
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.promo-2{
+    background: linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)
+    ),url('../images/promo_slide_2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.promo-3{
+    background:linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)
+    ), url('../images/promo_slide_3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.promo-item{
+    position: absolute; 
+    left: 50%;
+    top:50%;
+    transform: translate(-50% , -50%);
+    text-align: center;
+    text-shadow: black 1px 0 1px;
+}
+
+.promo-item>h1{
+    color: var(--white);
+    font-size: 11ch;
+    font-family: var(--lato);
+    font-weight: var(--font-weight-heavy);
+    line-height: 1.2;
+}
+
+.promo-item :nth-child(1){
+    font-family: var(--monteCarlo);
+    font-weight: bold;
+}
+
+.menu-btn{
+    color: white;
+    background-color: transparent;
+    font-size:3ch;
+    border:2px solid var(--white);
+    width: 55%;
+    margin: 3% 0;
+    padding: .5%  1%;
+}
+
+.menu-btn:hover{
+    background-color: var(--orange);
+    color :var(--white);
+    border: none;
+}
+
+/* TEXT ANIMATION HERE !!! */
+
+@keyframes text-animation {
+    0%{
+        transform: translateX(15%);
+    }
+    100%{
+        transform: rotateX(3in);
+    }
+}
+
+/* OUR STORY SECTION HERE  */
+
+#our-story{
+    background-color: var(--white);
+    font-size: 3ch;
+    font-family: var(--ptSans);
+    font-weight: var(--font-weight-light);
+    justify-content: center;
+    align-items: center;
+    color: var(--bluish-grey);
+    margin: 5% auto;
+    position: relative;
+    text-align: center;
+}
+
+
+.info#our-story>h1{
+    color: var(--orange);
+    font-size: 12ch;
+    font-family: var(--monteCarlo);
+    font-weight: var(--font-weight-heavy);
+    z-index: 3;
+}
+
+.our-story-info{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin:5% 2%;
+    position: relative;
+    z-index: 3;
+}
+
+/* !!!!MAKE SURE TO GIVE THE FIRST LETTER PROPER PROPERY !!!! */
+.about-us::first-letter{
+    font-size: 5ch;
+    line-height: .5;
+    white-space: 20px;
+}
+.our-story-info>P{
+    position: relative;
+    margin: 2% 5%;
+    width: 50%;
+}
+.about-img{
+    position: absolute;
+    width:100vw;
+    height:auto;
+    bottom: 0;
+    z-index: 2;
+}
+
+#our-story>img{
+    text-align: center;
+}
+
+
+/* SPEACIAL PACKAGE SECTION  */
+
+.package-body{
+    background:linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)
+    ), url('../images/promo_slide_2.jpg');
+    background-size: cover;
+    max-width: 100%;
+    min-height: 10vh;
+    text-align: center;
+    margin:0 auto;
+    z-index: 3;
+}
+
+.special-package-items{
+    height:80vh;
+    width: 60vw;
+    position: relative;
+    margin:5% auto;
+    right: 15%;
+}
+
+.package-info{
+    width: 35vw;
+    height: fit-content;
+    background: var(--white);
+    font-size: 3ch;
+    font-weight: var(--font-weight-light);
+    position: absolute;
+    padding: 0 5%;
+    text-align: left;
+    right: -15em;
+    top:7em;
+}
+
+.package-info>*{
+    margin: 5%;
+}
+.package-body>h1{
+    color: var(--orange);
+    font-size: 14ch;
+    font-family: var(--monteCarlo);
+    font-weight: var(--font-weight-max);
+    position: relative;
+    margin: 0 0 3%;
+}
+
+.special-package-items.item1{
+    background: url('../images/promo_slide_1.jpg') , no-repeat;
+    background-size:cover;
+}
+
+.special-package-items.item2{
+    background: url('../images/promo_slide_2.jpg') , no-repeat;
+    background-size:cover;
+}
+
+.special-package-items.item3{
+    background: url('../images/promo_slide_3.jpg') , no-repeat;
+    background-size:cover;
+}
+
+.special-btn{
+    width: 35%;
+    border: var(--orange) 1px solid;
+    color :var(--orange);
+    transition-duration: 200;
+}
+
+.special-btn:hover{
+    color: white;
+    background-color: var(--orange);
+    border-color: var(--white);
+}
+
+/* MENU CARD HERE  */
+.menuCards{
+    max-width: 100vw;
+    min-height: 100vh;
+    background: var(--white);
+}
+
+.menu-heading{
+    font-family:var(--monteCarlo);
+    font-weight: var(--font-weight-max);
+    text-align: center;
+    margin: 5% auto;
+    color: var(--orange);
+}
+
+.menu-heading>h1{
+    font-size: 9ch;
+}
+.menu-btn-list{
+    flex-direction: row;
+    flex: 1 1 30%;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-card-btn{
+    background: var(--white);
+    border: 1px solid var(--darkBlue);
+    border-radius: 0 ;
+    color: var(--darkBlue);
+    margin: 0 .5%;
+    padding:5px 25px;
+    font-size: 2ch;
+    font-weight: var(--font-weight-heavy);   
+    transition-duration: 200;
+}
+
+.menu-card-btn:hover{
+    background-color: var(--orange);
+    border: none;
+    color: var(--white);
+}
+
+.menu-card-holder{
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 2% auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition-delay: 200;
+}
+
+.menu-card-items{
+    flex: 0 1 40%;
+    border-bottom: 1px solid black;
+    flex-direction: row;
+    margin: 2%;
+    padding: 2%;
+    transition: ease-in-out;
+    transition-duration: 200;
+}
+
+.info-card>ul{
+    display: inline-block;
+    width:25%;
+    margin: 3% 5%;
+}
+
+.menu-lists{
+    float: right;
+}
+.info-card>ul>li{
+    display:block;
+    width: 15%;
+}
+
+.menu-card-items>h1{
+    color :var(--orange);
+}
+
+.menu-img>img{
+    border-radius: 50%;
+    margin: 3%;
+    border: 10px solid var(--grey);
+    position: relative;
+    right: 5%;
+    top:10%;
+}
+
+.bookingContainer{
+    /* BOOK A TABLE  */
+    background: linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)
+    ) , url('../images/promo_slide_3.jpg') , no-repeat;
+    background-size:cover;
+    width: 100vw;
+    height: 80vh;
+    text-align: center;
+    position:relative;
+}
+
+.booking-info{
+    position: absolute;
+    width: 50%;
+    top:40%;
+    right: 25%;
+}
+
+.booking-info>h1{
+    color: var(--white);
+    font-size: 10ch;
+    font-weight: var(--font-weight-max);
+    margin: 5%;
+    word-spacing: 5px;
+}
+
+.booking-info>button{
+    width: 25%;
+    padding: 1%;
+    color:var(--orange);
+    background-color: var(--white);
+    border: none;
+    font-size: 3ch;
+    font-weight: var(--font-weight-heavy);
+    letter-spacing: 5px;
+}
+
+/* OUR CHEFS HERE  */
+.our-chefs-container{
+    width: 100vw;
+    height: 100vh;
+    background: var(--white);
+    position: relative;
+}
+
+.chef-intro{
+    text-align: center;
+    width: 50%;
+    position: inherit;    
+    top:5%;
+    margin: auto;
+}
+
+.chef-intro>h1{
+    font-size: 8ch;
+    font-family: var(--monteCarlo);
+    font-weight: var(--font-weight-max);
+    color: var(--orange);
+}
+
+.chefs-container{
+    flex-direction: row;
+    flex: 1 0 50%;
+    width: 100vw;
+    height: 50%;
+    margin: 8em auto;
+    align-items: center;
+}
+
+.chef-card{
+    margin: 2% 3%;
+}
+
+.chef-pic{
+    text-align: center;
+    position: relative;
+}
+
+.chef-pic>img{
+    width: 100%;
+}
+
+.chef-info{
+    color: var(--darkBlue);
+    text-align: center;
+    width: 90%;
+}
+
+.chef-info>p{
+    color: var(--bluish-grey);
+    font-family: var(--lato);
+    font-size: 3ch;
+    line-height: 2;
+    font-weight: var(--font-weight-regular);
+    word-spacing: 2px;
+}
+
+.chef-contact{
+    display: block;
+    width: 100%;    
+    height: fit-content;
+    position: absolute;
+    background:black;
+    opacity: 0.7;
+    transition: ease-in;
+    text-align: right;
+}
+
+.chef-contact>a{
+    display: block;
+    margin: 9.5% 4%;
+}
+.chef-contact>a>i:hover{
+    color: var(--orange);
+}
+
+#gallery{
+    width: 100vw;
+    height: 50vh;
+    background: white;
+}
+
+.galleryHeader{
+    text-align: center;
+    margin: 15em auto;
+}
+
+footer,
+.footer{
+    background: linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)
+    ) , url('../images/Footer\ background.png') , no-repeat;
+    background-size: cover;
+}
+
+.footer{
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+
+    justify-content:center;
+    align-content: center;
+    color: white;
+    text-align: center;
+}
+
+.footer>img{
+    width: 25%;
+    margin:5% auto;
+}
+
+footer{ 
+    background-position-y:300px;
+    background-size:cover;
+    display: flex;
+    flex-direction:row;
+    font-size: 3ch;
+    font-weight: var(--font-weight-heavy);
+    color: var(--orange);
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;  
+}
+
+.foot-logos>i{
+    margin: 1%;
+}
+
+.foot-logos>i:hover{
+    color: var(--orange);
+}
+footer>p{
+    margin: 2%;
+}
+
+
+/* //FUNCTIONAL CLASS FOR JS  */
+
+.active-flex{
+    display: active;
+}
+
+.light-bar{
+    background-color: var(--white);
+    color:var(--bluish-grey);
+    width: 100vw;
+    margin: 0;
+    padding: 0 3% 2%;
+}
+
+.dark-text{
+    color: var(--bluish-grey);
+}
+
+.non-active{
+    display: none;
+}
+
+.light-text{
+    color: var(--white);
+}
